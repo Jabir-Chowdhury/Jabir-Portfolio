@@ -1,0 +1,376 @@
+
+/* ========================================
+   1. CSS VARIABLES
+======================================== */
+
+:root {
+  /* Colors from the teacher's instructions */
+  --navy: #1B1340;
+  --violet: #6C3CF0;
+  --yellow: #FFC93C;
+  --pink: #FF5C8A;
+  --mint: #19C3A6;
+  --blue: #3B9BFF;
+  --orange: #FF8A3D;
+  --bg: #FBF8FF;
+
+  /* Additional colors used by the design */
+  --lav: #EFE8FF;
+  --cream: #FFF4D6;
+  --muted: #5C5478;
+
+  /* Fonts specified by the teacher */
+  --font-h: "Bricolage Grotesque", sans-serif;
+  --font-b: "DM Sans", sans-serif;
+  --font-m: "JetBrains Mono", monospace;
+}
+
+
+/* ========================================
+   2. BASIC RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--navy);
+  font-family: var(--font-b);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   3. COMMON TYPOGRAPHY
+======================================== */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-h);
+  line-height: 1.15;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* ---------- Header & Navigation ---------- */
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.site-header {
+  background-color: var(--navy);
+  color: #fff;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-block: 16px;
+}
+
+.logo {
+  color: #fff;
+  font-family: var(--font-m);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  display: inline-block;
+  font-size: 0.88rem;
+}
+
+.nav-list a:not(.nav-contact):hover {
+  color: var(--yellow);
+}
+
+.nav-contact {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background-color: var(--yellow);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 80px;
+  background-color: var(--navy);
+  color: #fff;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: var(--mint);
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hero-content h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: var(--yellow);
+}
+
+.hero-role {
+  margin: 0 0 16px;
+  font-size: 1rem;
+}
+
+.hero-role span {
+  color: var(--pink);
+}
+
+.hero-description {
+  max-width: 440px;
+  margin: 0 0 24px;
+  color: #D9D3EE;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.button {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.button-primary {
+  background-color: var(--yellow);
+  color: var(--navy);
+}
+
+.button-secondary {
+  border-color: rgb(255 255 255 / 35%);
+  color: #fff;
+}
+
+.hero-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-skills li {
+  padding: 5px 10px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--font-m);
+  font-size: 0.7rem;
+}
+
+
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.profile-shape {
+  position: relative;
+  z-index: 1;
+  width: 280px;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 48% 48% 24px 24px;
+  background-color: var(--yellow);
+}
+
+.profile-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 105% 50%;
+   transform: translateY(33px) scale(1.15);
+
+}
+
+
+
+.shape {
+  position: absolute;
+  pointer-events: none;
+}
+
+
+.shape-circle-purple {
+  width: 440px;
+  height: 440px;
+  top: -250px;
+  right: -200px;
+  border-radius: 50%;
+  background-color: var(--violet);
+  opacity: 1;
+  z-index: 0;
+}
+
+
+.shape-circle-pink {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: var(--pink);
+  opacity: 1;
+  z-index: 0;
+}
+
+
+.shape-dot-green {
+  width: 18px;
+  height: 18px;
+  bottom: 24px;
+  left: 47%;
+  border-radius: 50%;
+  background-color: var(--mint);
+  z-index: 0;
+} 
+.shape-circle-orange {
+  width: 440px;
+  height: 440px;
+  bottom: -250px;
+  left: -200px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  z-index: 0;
+}
+
+/* ========================================
+   MARQUEE — Scrolling Skills Strip
+======================================== */
+
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--yellow);
+  border-top: 2px solid var(--navy);
+  border-bottom: 2px solid var(--navy);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 24px;
+  margin: 0;
+  padding: 6px 24px;
+  list-style: none;
+}
+
+.marquee-group li {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  color: var(--navy);
+  font-family: var(--font-h);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.marquee-group .star {
+  color: var(--violet);
+  font-size: 18px;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
