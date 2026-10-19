@@ -1270,3 +1270,317 @@ textarea {
   }
 }
 
+/* =========================
+   RESUME SECTION
+========================= */
+
+.resume-section {
+  padding: 64px 0;
+  background-color: var(--cream);
+  border-top: 2px solid var(--violet);
+  border-bottom: 2px solid var(--violet);
+}
+
+/* Resume Heading */
+
+.resume-header {
+  margin-bottom: 28px;
+}
+
+.resume-header h2 {
+  margin: 0 0 4px;
+  color: var(--navy);
+  font-family: var(--font-h);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.resume-header p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Resume Layout: Timeline + CV Card */
+
+.resume-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.resume-timeline {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 680px;
+  padding-left: 30px;
+}
+
+.resume-cv-card {
+  flex: 0 0 248px;
+  min-width: 0;
+}
+
+/* Resume Timeline Cards */
+
+.resume-item {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.resume-item-content {
+  padding: 14px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+  box-shadow: 3px 4px 0 var(--navy);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.resume-item-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 6px 0 var(--navy);
+}
+
+/* Resume Year Badge */
+
+.resume-year {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background-color: var(--lav);
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Resume Item Heading */
+
+.resume-item-content h3 {
+  margin: 0 0 3px;
+  color: var(--navy);
+  font-family: var(--font-h);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* Institution */
+
+.resume-institution {
+  margin: 0 0 6px;
+  color: var(--pink);
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.resume-institution a {
+  color: var(--orange);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.resume-institution a:hover {
+  text-decoration: underline;
+}
+
+/* Description */
+
+.resume-description {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-b);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Resume Timeline Vertical Line */
+
+.resume-timeline {
+  position: relative;
+}
+
+.resume-timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 24px;
+  left: 10px;
+  border-left: 2px dotted var(--violet);
+}
+
+/* Resume Timeline Dots */
+
+.resume-dot {
+  position: absolute;
+  top: 16px;
+  left: -28px;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+  background-color: var(--violet);
+}
+
+/* Different Colors for Each Dot */
+
+.resume-item:nth-child(2) .resume-dot {
+  background-color: var(--pink);
+}
+
+.resume-item:nth-child(3) .resume-dot {
+  background-color: var(--mint);
+}
+
+/* Resume CV Card */
+
+.resume-cv-card {
+  position: relative;
+  flex: 0 0 248px;
+  min-width: 0;
+  margin-left: auto;
+  padding: 28px 20px 20px;
+  background-color: var(--pink);
+  border: 2px solid var(--navy);
+  border-top: 5px solid var(--navy);
+  border-radius: 12px;
+  box-shadow: 4px 5px 0 var(--navy);
+}
+
+/* CV Icon */
+
+.resume-cv-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  color: var(--navy);
+  background-color: var(--cream);
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+}
+
+/* PDF Badge */
+
+.resume-pdf-badge {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  padding: 4px 8px;
+  color: #FFFFFF;
+  background-color: var(--violet);
+  border: 1px solid var(--navy);
+  border-radius: 5px;
+  font-family: var(--font-m);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* CV Heading */
+
+.resume-cv-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-family: var(--font-h);
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* CV Description */
+
+.resume-cv-card > p:not(.resume-updated) {
+  margin: 0 0 20px;
+  color: var(--navy);
+  font-family: var(--font-b);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Download Button */
+
+.resume-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 12px;
+  color: #FFFFFF;
+  background-color: var(--navy);
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 200ms ease, color 200ms ease,
+    transform 200ms ease;
+}
+
+.resume-download-btn:hover {
+  color: var(--navy);
+  background-color: var(--yellow);
+  transform: translateY(-2px);
+}
+
+/* Last Updated */
+
+.resume-updated {
+  margin: 14px 0 0;
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Resume Section - Responsive Design */
+
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .resume-timeline {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .resume-cv-card {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section {
+    padding: 48px 0;
+  }
+
+  .resume-header h2 {
+    font-size: 32px;
+  }
+
+  .resume-item-content {
+    padding: 14px 12px 14px 30px;
+  }
+
+  .resume-cv-card {
+    padding: 24px 16px 18px;
+  }
+}
+
