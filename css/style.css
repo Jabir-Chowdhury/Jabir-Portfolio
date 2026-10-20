@@ -192,7 +192,7 @@ textarea {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-block: 80px;
+  padding: 80px 0 120px;
   background-color: var(--navy);
   color: var(--white);
 }
@@ -207,26 +207,27 @@ textarea {
 }
 
 .hero-content {
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .hero-badge {
   display: inline-block;
-  margin: 0 0 16px;
-  padding: 5px 12px;
+  margin: 0 0 20px;
+  padding: 6px 14px;
   border-radius: 999px;
   background-color: var(--mint);
   color: var(--navy);
   font-family: var(--font-m);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
 }
 
 .hero-content h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  margin: 0 0 22px;
+  font-size: clamp(3rem, 5.6vw, 5rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 0.95;
+  letter-spacing: -2px;
 }
 
 .hero-content h1 span {
@@ -235,41 +236,64 @@ textarea {
 }
 
 .hero-role {
-  margin: 0 0 16px;
-  font-size: 1rem;
+  margin: 0 0 18px;
+  font-size: 1.375rem;
 }
 
-.hero-role span {
-  color: var(--pink);
+/* "HTML" in pink and "CSS" in blue, like the design */
+.role-html {
+  color: var(--pink-light);
+}
+
+.role-css {
+  color: var(--blue-light);
 }
 
 .hero-description {
-  max-width: 440px;
-  margin: 0 0 24px;
+  max-width: 520px;
+  margin: 0 0 32px;
   color: var(--on-dark);
-  font-size: 0.95rem;
-  line-height: 1.8;
+  font-size: 1.125rem;
+  line-height: 1.65;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 .button {
-  display: inline-block;
-  padding: 11px 18px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
   font-weight: 700;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 3px;
 }
 
 .button-primary {
   background-color: var(--yellow);
   color: var(--navy);
+  box-shadow: 4px 4px 0 var(--pink);
+}
+
+.button-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--pink);
 }
 
 .button-secondary {
@@ -277,107 +301,157 @@ textarea {
   color: var(--white);
 }
 
+.button-secondary:hover {
+  background-color: var(--white);
+  color: var(--navy);
+}
+
 .hero-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .hero-skills li {
-  padding: 5px 10px;
+  padding: 6px 14px;
   border-radius: 999px;
-  color: var(--white);
+  color: var(--navy);
   font-family: var(--font-m);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
 }
 
+/* Skill pill colours, in the design's order */
+.hero-skills li:nth-child(1) {
+  background-color: var(--orange);
+}
 
+.hero-skills li:nth-child(2) {
+  background-color: var(--blue);
+}
+
+.hero-skills li:nth-child(3) {
+  background-color: var(--pink);
+}
+
+.hero-skills li:nth-child(4) {
+  background-color: var(--mint);
+}
+
+.hero-skills li:nth-child(5) {
+  background-color: var(--yellow);
+}
 
 .hero-visual {
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   min-width: 0;
 }
 
-.profile-shape {
+/* Holds the arch and the stickers that hang over its edges */
+.profile-frame {
   position: relative;
-  z-index: 1;
-  width: 280px;
-  height: 340px;
+  width: min(100%, 400px);
+}
+
+/* 4:5 arch: a half-circle top (50% of the width = 40% of the height) */
+.profile-shape {
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 48% 48% 24px 24px;
+  border: 4px solid var(--white);
+  border-radius: 50% 50% 28px 28px / 40% 40% 28px 28px;
   background-color: var(--yellow);
 }
 
 .profile-picture {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 105% 50%;
-   transform: translateY(33px) scale(1.15);
-
+  /* The photo is landscape, so show its right side, where Jabir stands */
+  object-position: 100% 0;
 }
 
+/* Code stickers on the photo, like the design */
+.code-sticker {
+  position: absolute;
+  z-index: 2;
+  padding: 8px 14px;
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
 
+.sticker-html {
+  top: 8%;
+  left: -4%;
+  background-color: var(--white);
+  box-shadow: 4px 4px 0 var(--pink);
+  transform: rotate(-8deg);
+}
 
+.sticker-grid {
+  right: -5%;
+  bottom: 4%;
+  background-color: var(--mint);
+  box-shadow: 4px 4px 0 var(--white);
+  transform: rotate(6deg);
+}
+
+.hero-star {
+  position: absolute;
+  z-index: 2;
+  top: -1%;
+  right: 5%;
+  width: 48px;
+  height: 48px;
+}
+
+.hero-star path {
+  fill: var(--pink);
+  stroke: var(--navy);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+/* Background decorations */
 .shape {
   position: absolute;
+  z-index: 0;
+  border-radius: 50%;
   pointer-events: none;
 }
 
-
 .shape-circle-purple {
-  width: 440px;
-  height: 440px;
-  top: -250px;
-  right: -200px;
-  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  top: -330px;
+  right: -160px;
   background-color: var(--violet);
-  opacity: 1;
-  z-index: 0;
 }
 
-
+/* Pink circle peeking in at the bottom-left corner */
 .shape-circle-pink {
-  width: 220px;
-  height: 220px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+  width: 260px;
+  height: 260px;
+  bottom: -158px;
+  left: -130px;
   background-color: var(--pink);
-  opacity: 1;
-  z-index: 0;
 }
-
 
 .shape-dot-green {
-  width: 18px;
-  height: 18px;
-  bottom: 24px;
+  width: 26px;
+  height: 26px;
+  bottom: 64px;
   left: 47%;
-  border-radius: 50%;
   background-color: var(--mint);
-  z-index: 0;
-} 
-.shape-circle-orange {
-  width: 440px;
-  height: 440px;
-  bottom: -250px;
-  left: -200px;
-  border-radius: 50%;
-  background-color: var(--orange);
-  z-index: 0;
 }
-
-
-
 
 .marquee {
   overflow: hidden;
@@ -722,33 +796,6 @@ textarea {
   font-size: 12px;
   line-height: 1.5;
 }
-
-/* Individual skill badge colors */
-.hero-skills li:nth-child(1) {
-  background-color: var(--mint);
-  color: var(--navy);
-}
-
-.hero-skills li:nth-child(2) {
-  background-color: var(--pink);
-  color: var(--navy);
-}
-
-.hero-skills li:nth-child(3) {
-  background-color: var(--yellow);
-  color: var(--navy);
-}
-
-.hero-skills li:nth-child(4) {
-  background-color: var(--violet);
-  color: var(--white);
-}
-
-.hero-skills li:nth-child(5) {
-  background-color: var(--orange);
-  color: var(--navy);
-}
-
 
 /* Checkmark Before Each List Item */
 
@@ -1564,7 +1611,7 @@ textarea {
 
   /* Hero layout */
   .hero-section {
-    padding-block: 64px;
+    padding: 48px 0 104px;
   }
 
   /* One column: the two-column grid was squeezing both halves */
@@ -1576,36 +1623,41 @@ textarea {
   /* Photo above the text, like the mobile design */
   .hero-visual {
     order: -1;
+    justify-content: center;
   }
 
   .hero-content h1 {
-    font-size: clamp(2.3rem, 5.5vw, 3.5rem);
+    font-size: clamp(2.8rem, 12vw, 3.5rem);
   }
 
-  .profile-shape {
-    width: 240px;
-    height: 300px;
+  .hero-role {
+    font-size: 1.25rem;
   }
 
-  .shape-circle-purple,
-  .shape-circle-orange {
-    width: 340px;
-    height: 340px;
+  .hero-description {
+    font-size: 1.0625rem;
   }
 
   .shape-circle-purple {
-    top: -190px;
-    right: -160px;
-  }
-
-  .shape-circle-orange {
-    bottom: -190px;
-    left: -160px;
+    width: 480px;
+    height: 480px;
+    top: -240px;
+    right: -200px;
   }
 
   .shape-circle-pink {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
+    bottom: -120px;
+    left: -100px;
+  }
+}
+
+/* Phones: stack the hero buttons, like the mobile design */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
