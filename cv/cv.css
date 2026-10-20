@@ -1,0 +1,626 @@
+/* ========================================
+   JABIR CHOWDHURY CV
+   Same colours, fonts and shapes as the portfolio,
+   laid out as one A4 page.
+======================================== */
+
+:root {
+  /* Colors from the teacher's instructions */
+  --navy: #1B1340;
+  --violet: #6C3CF0;
+  --yellow: #FFC93C;
+  --pink: #FF5C8A;
+  --mint: #19C3A6;
+  --blue: #3B9BFF;
+  --orange: #FF8A3D;
+  --bg: #FBF8FF;
+
+  /* Supporting colors, the same as in css/style.css */
+  --white: #FFFFFF;
+  --lav: #EFE8FF;
+  --text: #3A3360;
+  --muted: #5A5280;
+  --on-dark: #D6D0F5;
+  --on-dark-muted: #AAA3C8;
+  --pink-text: #C4245A;
+  --page-shadow: #1B134040;
+
+  /* Light tints and highlighter stripes */
+  --violet-tint: #E3D9FF;
+  --pink-tint: #FFD6E2;
+  --yellow-tint: #FFEDB8;
+  --mint-tint: #C8F3EA;
+  --blue-tint: #D3E8FF;
+  --orange-tint: #FFE2CF;
+  --mint-highlight: #8EEBD9;
+  --pink-highlight: #FFB3C9;
+  --blue-highlight: #A9D2FF;
+
+  /* Fonts specified by the teacher */
+  --font-h: "Bricolage Grotesque", sans-serif;
+  --font-b: "DM Sans", sans-serif;
+  --font-m: "JetBrains Mono", monospace;
+}
+
+
+/* ========================================
+   PAGE SETUP
+======================================== */
+
+/* One A4 sheet with no printer margins */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Print the coloured backgrounds too */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-b);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* On screen, show the CV like a sheet of paper */
+@media screen {
+  body {
+    padding: 32px 16px;
+    background-color: var(--lav);
+  }
+
+  .page {
+    margin: 0 auto;
+    box-shadow: 0 12px 40px var(--page-shadow);
+  }
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 70mm minmax(0, 1fr);
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+
+/* ========================================
+   LEFT COLUMN
+======================================== */
+
+.sidebar {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow: hidden;
+  padding: 12mm 8mm 10mm;
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+/* Background circles, like the hero */
+.shape {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.shape-violet {
+  top: -80px;
+  right: -110px;
+  width: 250px;
+  height: 250px;
+  background-color: var(--violet);
+}
+
+.shape-pink {
+  bottom: -80px;
+  left: -70px;
+  width: 170px;
+  height: 170px;
+  background-color: var(--pink);
+}
+
+.logo {
+  font-family: var(--font-m);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.logo-bracket {
+  color: var(--pink);
+}
+
+.logo-slash {
+  color: var(--mint);
+}
+
+/* Photo arch with a code sticker */
+.photo-frame {
+  position: relative;
+  width: 42mm;
+  margin: -4px auto 0;
+}
+
+.photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 3px solid var(--white);
+  border-radius: 50% 50% 16px 16px / 40% 40% 16px 16px;
+  background-color: var(--yellow);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 0;
+}
+
+.sticker {
+  position: absolute;
+  right: -16px;
+  bottom: 12px;
+  padding: 3px 8px;
+  border: 1.5px solid var(--navy);
+  border-radius: 6px;
+  background-color: var(--mint);
+  box-shadow: 2px 2px 0 var(--white);
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 9px;
+  font-weight: 700;
+  transform: rotate(6deg);
+}
+
+.side-title {
+  margin-bottom: 9px;
+  color: var(--yellow);
+  font-family: var(--font-m);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Contact rows with coloured icon tiles */
+.contact-list {
+  display: grid;
+  gap: 8px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.tile {
+  display: grid;
+  flex: 0 0 24px;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+}
+
+.tile img {
+  width: 13px;
+  height: 13px;
+}
+
+.tile-pink {
+  background-color: var(--pink);
+}
+
+.tile-mint {
+  background-color: var(--mint);
+}
+
+.tile-yellow {
+  background-color: var(--yellow);
+}
+
+.link-list {
+  display: grid;
+  gap: 8px;
+}
+
+.link-list li {
+  display: grid;
+}
+
+.link-label {
+  color: var(--on-dark-muted);
+  font-family: var(--font-m);
+  font-size: 9px;
+}
+
+.link-list a {
+  font-size: 9.5px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* Skills: the same coloured pills as the portfolio hero */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pills li {
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.pills .pill-orange {
+  background-color: var(--orange);
+}
+
+.pills .pill-blue {
+  background-color: var(--blue);
+}
+
+.pills .pill-pink {
+  background-color: var(--pink);
+}
+
+.pills .pill-mint {
+  background-color: var(--mint);
+}
+
+.pills .pill-yellow {
+  background-color: var(--yellow);
+}
+
+.pills .pill-violet {
+  background-color: var(--violet);
+  color: var(--white);
+}
+
+.pill-group {
+  margin: 10px 0 6px;
+  color: var(--on-dark-muted);
+  font-family: var(--font-m);
+  font-size: 9px;
+}
+
+.pills-outline li {
+  border: 1px solid var(--on-dark-muted);
+  color: var(--white);
+  font-weight: 400;
+}
+
+.side-text {
+  color: var(--on-dark);
+  font-size: 11px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 5px 10px;
+  font-size: 10.5px;
+}
+
+.facts dt {
+  color: var(--on-dark-muted);
+}
+
+.facts dd {
+  font-weight: 700;
+}
+
+
+/* ========================================
+   RIGHT COLUMN
+======================================== */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 12mm 12mm 9mm;
+}
+
+/* Name and headline */
+.cv-header {
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--navy);
+}
+
+.code-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: var(--mint);
+  font-family: var(--font-m);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: var(--font-h);
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+}
+
+/* Highlighter stripe behind the surname, like the portfolio headings */
+h1 span {
+  background: linear-gradient(transparent 62%, var(--yellow) 62%);
+}
+
+.headline {
+  margin-top: 12px;
+  color: var(--violet);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.headline .sep {
+  color: var(--muted);
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border: 1.5px solid var(--navy);
+  border-radius: 999px;
+  background-color: var(--mint-tint);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+/* Section headings with the portfolio's highlighter stripes */
+.block h2 {
+  margin-bottom: 9px;
+  font-family: var(--font-h);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.hl-yellow {
+  background: linear-gradient(transparent 60%, var(--yellow) 60%);
+}
+
+.hl-mint {
+  background: linear-gradient(transparent 60%, var(--mint-highlight) 60%);
+}
+
+.hl-pink {
+  background: linear-gradient(transparent 60%, var(--pink-highlight) 60%);
+}
+
+.hl-blue {
+  background: linear-gradient(transparent 60%, var(--blue-highlight) 60%);
+}
+
+.profile {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Projects: small cards with a coloured edge */
+.projects {
+  display: grid;
+  gap: 10px;
+}
+
+.project {
+  padding: 10px 12px 10px 14px;
+  border: 1.5px solid var(--navy);
+  border-left: 7px solid var(--violet);
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 3px 3px 0 var(--navy);
+}
+
+.project-pink {
+  border-left-color: var(--pink);
+}
+
+.project-yellow {
+  border-left-color: var(--yellow);
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.project h3 {
+  font-family: var(--font-h);
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.tags {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+}
+
+.tags li {
+  padding: 1px 7px;
+  border: 1px solid var(--navy);
+  border-radius: 999px;
+  font-family: var(--font-m);
+  font-size: 9px;
+}
+
+.tech-html {
+  background-color: var(--orange-tint);
+}
+
+.tech-css {
+  background-color: var(--blue-tint);
+}
+
+.tech-flexbox {
+  background-color: var(--pink-tint);
+}
+
+.tech-grid {
+  background-color: var(--mint-tint);
+}
+
+.tech-responsive {
+  background-color: var(--yellow-tint);
+}
+
+.project p {
+  color: var(--text);
+  font-size: 11.5px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--violet);
+  font-family: var(--font-m);
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+/* Education and training: a dashed timeline, like the resume section */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 5px;
+  border-left: 2px dashed var(--navy);
+}
+
+.entry {
+  position: relative;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -21px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--navy);
+  border-radius: 50%;
+  background-color: var(--violet);
+}
+
+.entry-pink::before {
+  background-color: var(--pink);
+}
+
+.year {
+  display: inline-block;
+  margin-bottom: 3px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background-color: var(--violet-tint);
+  font-family: var(--font-m);
+  font-size: 9.5px;
+  font-weight: 700;
+}
+
+.entry-pink .year {
+  background-color: var(--pink-tint);
+}
+
+.entry h3 {
+  font-family: var(--font-h);
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.entry p {
+  color: var(--text);
+  font-size: 11.5px;
+}
+
+.entry .where {
+  margin: 1px 0 2px;
+  color: var(--violet);
+  font-weight: 700;
+}
+
+.entry-pink .where {
+  color: var(--pink-text);
+}
+
+/* Footer line at the bottom of the page */
+.cv-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1.5px solid var(--navy);
+  color: var(--muted);
+  font-family: var(--font-m);
+  font-size: 9.5px;
+}
+
+.footer-html {
+  color: var(--pink-text);
+}
+
+.footer-css {
+  color: var(--violet);
+}

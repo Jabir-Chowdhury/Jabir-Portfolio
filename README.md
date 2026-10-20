@@ -8,7 +8,7 @@ A responsive personal portfolio website built with HTML and CSS, featuring moder
 - **Modern UI:** Clean layouts, consistent styling, and well-structured sections.
 - **Animations & Transitions:** Enhanced visual interactions and user experience.
 - **Portfolio Sections:** Header, Hero, About, Skills, Projects, Resume, Contact, and Footer.
-- **CV Download:** Includes a downloadable resume.
+- **CV Download:** Includes a downloadable one-page CV. Its source is `cv/cv.html`, styled like the portfolio. To update the PDF, open that page in Chrome, print it with "Save as PDF" (A4, margins None, background graphics on) and save over `Jabir_Chowdhury_CV.pdf`.
 
 ## Development Workflow
 
