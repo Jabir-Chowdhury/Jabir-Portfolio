@@ -26,8 +26,8 @@
 
      <header class="site-header">
        <div class="container">
-         <a class="logo" href="#home">
-            Jabir Chowdhury
+         <a class="logo" href="#home" aria-label="Jabir Chowdhury, back to the top">
+           <span class="logo-bracket">&lt;</span>jabir <span class="logo-slash">/&gt;</span>
          </a>
 
          <nav class="main-navigation" aria-label="Main navigation">
@@ -49,7 +49,7 @@
     <!-- Left side: Profile information -->
             <div class="hero-content">
 
-              <p class="hero-badge">Hi! Hello, I'm</p>
+              <p class="hero-badge"><span aria-hidden="true">&lt;h1&gt;</span> Hello, I'm</p>
 
               <h1>
                 Jabir
@@ -165,7 +165,9 @@
           <!-- Left Side: About Me -->
           <div class="about-intro">
 
-             <h2> A little <br> <span>About <span class="color-blue">me.</span></span></h2>
+             <p class="section-tag tag-about" aria-hidden="true">&lt;section id="about"&gt;</p>
+
+             <h2>About <span>me</span></h2>
 
              <p>
                 Hi, I'm Jabir Chowdhury. With a background in Mathematics,
@@ -274,7 +276,7 @@
   <div class="container">
 
     <div class="skills-header">
-     
+      <p class="section-tag tag-skills" aria-hidden="true">&lt;section id="skills"&gt;</p>
 
       <h2>My <span>skills</span></h2>
 
@@ -355,7 +357,8 @@
     <!-- Section Heading and GitHub Link -->
     <div class="projects-header">
       <div class="projects-heading">
-        <h2>My projects</h2>
+        <p class="section-tag tag-projects" aria-hidden="true">&lt;section id="projects"&gt;</p>
+        <h2>My <span>projects</span></h2>
         <p>A few things I've built while learning.</p>
       </div>
 
@@ -559,7 +562,8 @@
 
     <!-- Section Heading -->
     <div class="resume-header">
-      <h2>My resume</h2>
+      <p class="section-tag tag-resume" aria-hidden="true">&lt;section id="resume"&gt;</p>
+      <h2>My <span>resume</span></h2>
       <p>Education, training and milestones.</p>
     </div>
 
@@ -707,7 +711,7 @@
     <div class="contact-container">
 
       <div class="contact-info">
-        <span class="section-label">Get in touch</span>
+        <p class="section-tag tag-contact" aria-hidden="true">&lt;section id="contact"&gt;</p>
 
         <h2>
           Let's build something

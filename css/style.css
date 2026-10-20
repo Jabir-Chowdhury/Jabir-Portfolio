@@ -32,6 +32,12 @@
   --pink-tint: #FFD6E2;
   --mint-tint: #C8F3EA;
   --blue-tint: #D3E8FF;
+  --yellow-tint: #FFEDB8;
+
+  /* Highlighter stripes behind heading words */
+  --mint-highlight: #8EEBD9;
+  --pink-highlight: #FFB3C9;
+  --blue-highlight: #A9D2FF;
 
   /* Fonts specified by the teacher */
   --font-h: "Bricolage Grotesque", sans-serif;
@@ -85,6 +91,40 @@ textarea {
   font: inherit;
 }
 
+/* Code-style labels above each section heading, e.g. <section id="about"> */
+.section-tag {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 5px 12px;
+  border: 1.5px solid var(--navy);
+  border-radius: 999px;
+  color: var(--navy);
+  font-family: var(--font-m);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.tag-about {
+  background-color: var(--pink-tint);
+}
+
+.tag-skills {
+  background-color: var(--blue-tint);
+}
+
+.tag-projects {
+  background-color: var(--yellow-tint);
+}
+
+.tag-resume {
+  background-color: var(--mint-tint);
+}
+
+.tag-contact {
+  border-color: var(--mint);
+  background-color: var(--mint);
+}
+
 /* ---------- Header & Navigation ---------- */
 
 .container {
@@ -108,8 +148,17 @@ textarea {
 .logo {
   color: var(--white);
   font-family: var(--font-m);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+.logo-bracket {
+  color: var(--pink);
+}
+
+.logo-slash {
+  color: var(--mint);
 }
 
 .nav-list {
@@ -413,21 +462,20 @@ textarea {
 /* About introduction */
 .about-intro h2 {
   margin: 0 0 24px;
-  color: var(--mint);
+  color: var(--navy);
   font-family: var(--font-h);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
 }
 
+/* Highlighter stripe behind "me", like the other section headings */
 .about-intro h2 span {
-  color: var(--pink);
-  font-size: 1.5em;
-  display: inline-block;
-}
-h2 .color-blue {
-  color: var(--navy) !important;
+  background: linear-gradient(
+    transparent 62%,
+    var(--yellow) 62%
+  );
 }
 
 .about-intro p {
@@ -568,8 +616,8 @@ h2 .color-blue {
 
 .skills-header h2 span {
   background: linear-gradient(
-    transparent 58%,
-    var(--mint) 58%
+    transparent 62%,
+    var(--mint-highlight) 62%
   );
 }
 
@@ -796,6 +844,13 @@ h2 .color-blue {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -1.5px;
+}
+
+.projects-heading h2 span {
+  background: linear-gradient(
+    transparent 62%,
+    var(--pink-highlight) 62%
+  );
 }
 
 .projects-heading p {
@@ -1196,6 +1251,13 @@ h2 .color-blue {
   letter-spacing: -1.5px;
 }
 
+.resume-header h2 span {
+  background: linear-gradient(
+    transparent 62%,
+    var(--blue-highlight) 62%
+  );
+}
+
 .resume-header p {
   margin: 0;
   color: var(--muted);
@@ -1584,17 +1646,6 @@ h2 .color-blue {
 .contact-section .contact-info {
   min-width: 0;
   color: var(--white);
-}
-
-.contact-section .section-label {
-  display: inline-block;
-  margin-bottom: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background-color: var(--mint);
-  color: var(--navy);
-  font-size: 10px;
-  font-weight: 700;
 }
 
 .contact-section .contact-info h2 {
@@ -1994,11 +2045,6 @@ h2 .color-blue {
   }
 
   /* Contact Information */
-  .contact-section .section-label {
-    margin-bottom: 10px;
-    font-size: 9px;
-  }
-
   .contact-section .contact-info h2 {
     font-size: clamp(27px, 7vw, 32px);
     letter-spacing: -0.7px;
