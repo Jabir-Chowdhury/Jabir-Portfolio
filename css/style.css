@@ -587,6 +587,14 @@ h2 .color-blue {
   text-decoration: underline;
 }
 
+/* About: stack the text and the card on tablets and phones */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+
 /* ==============================
    SKILLS SECTION
 ================================ */
@@ -1560,8 +1568,15 @@ h2 .color-blue {
     padding-block: 64px;
   }
 
+  /* One column: the two-column grid was squeezing both halves */
   .hero-container {
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  /* Photo above the text, like the mobile design */
+  .hero-visual {
+    order: -1;
   }
 
   .hero-content h1 {
@@ -2321,25 +2336,5 @@ h2 .color-blue {
   .site-footer::before,
   .site-footer::after {
     animation: none;
-  }
-}
-
-
-/* Hero profile picture - Mobile alignment fix */
-@media (max-width: 768px) {
-  .hero-visual {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-inline: auto;
-  }
-
-  .hero-visual .profile-shape {
-    margin-inline: auto;
-  }
-
-  .hero-visual .profile-picture {
-    display: block;
-    margin-inline: auto;
   }
 }
