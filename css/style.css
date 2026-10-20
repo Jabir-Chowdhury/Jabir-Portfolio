@@ -283,7 +283,6 @@ textarea {
 
 
 .shape-circle-pink {
-  position: absolute;
   width: 220px;
   height: 220px;
   top: 50%;
@@ -494,7 +493,6 @@ h2 .color-blue {
 .about-intro p:last-child {
   margin-bottom: 0;
 }
-/* About Information Card */
 /* About Information Card */
 .about-card {
   background-color: #FFFFFF;
@@ -1273,11 +1271,6 @@ h2 .color-blue {
   padding-left: 30px;
 }
 
-.resume-cv-card {
-  flex: 0 0 248px;
-  min-width: 0;
-}
-
 /* Resume Timeline Cards */
 
 .resume-item {
@@ -1329,7 +1322,6 @@ h2 .color-blue {
 
 .resume-institution {
   margin: 0 0 6px;
-  color: var(--pink);
   font-family: var(--font-b);
   font-size: 11px;
   font-weight: 700;
@@ -1364,10 +1356,6 @@ h2 .color-blue {
 }
 
 /* Resume Timeline Vertical Line */
-
-.resume-timeline {
-  position: relative;
-}
 
 .resume-timeline::before {
   content: "";
@@ -2124,18 +2112,10 @@ h2 .color-blue {
     gap: 14px;
   }
 
+  /* 16px stops iPhones from zooming in when a field is tapped */
   .contact-section .contact-form input,
   .contact-section .contact-form textarea {
-    box-sizing: border-box;
     font-size: 16px;
-  }
-
-  .contact-section .contact-form input {
-    height: 44px;
-  }
-
-  .contact-section .contact-form textarea {
-    min-height: 120px;
   }
 
   .contact-section .contact-submit-btn {
@@ -2181,49 +2161,6 @@ h2 .color-blue {
 }
 
 
-/* ==============================
-   Extra Mobile Safety Fixes
-================================= */
-
-@media (max-width: 480px) {
-
-  .contact-section,
-  .site-footer {
-    max-width: 100%;
-  }
-
-  .contact-section .contact-container {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-
-  .contact-section .contact-info,
-  .contact-section .contact-form-container,
-  .contact-section .contact-form,
-  .contact-section .contact-form .form-group {
-    min-width: 0;
-    max-width: 100%;
-  }
-
-  .contact-section .contact-form-container {
-    padding: 18px 14px;
-  }
-
-  .contact-section .contact-form input,
-  .contact-section .contact-form textarea {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  .contact-section .contact-details a {
-    overflow-wrap: anywhere;
-  }
-
-  .site-footer .footer-container {
-    align-items: flex-start;
-  }
-}
-
 /* Extra-small phones */
 @media (max-width: 360px) {
 
@@ -2238,10 +2175,6 @@ h2 .color-blue {
 
   .contact-section .contact-form-container {
     padding: 16px 12px;
-  }
-
-  .contact-section .contact-social-links {
-    gap: 8px;
   }
 
   .contact-section .contact-social-links a {
