@@ -27,7 +27,7 @@ A responsive personal portfolio website built with HTML and CSS, featuring moder
 
 ## Project Status
 
-**Completed — Ready for Review and Merge**
+**Completed — Live on GitHub Pages**
 
 ## Author
 
